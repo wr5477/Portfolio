@@ -4687,3 +4687,118 @@ input, select, textarea {
 		}
 
 	}
+	
+	/* ===== Featured Split: Profile (Left) + Featured Project (Right) ===== */
+.featured-split {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.profile-card {
+  flex: 1;
+  background: #fff;
+  border: solid 1px rgba(160, 160, 160, 0.3);
+  box-shadow: 0 0 0 1px rgba(160, 160, 160, 0.1);
+}
+
+.profile-inner {
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+.profile-avatar {
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-right {
+  flex: 2;
+}
+
+@media screen and (max-width: 980px) {
+  .featured-split {
+    flex-direction: column;
+  }
+  .featured-right {
+    flex: 1;
+  }
+}
+
+/* ===== Uniform thumbnail size for project images (exclude profile avatar) ===== */
+.posts article .image.fit img {
+  width: 100%;
+  height: 260px;      /* 여기 숫자만 바꾸면 전체 썸네일 높이 조절 */
+  object-fit: cover;
+}
+
+.featured-right .image.main img {
+  width: 100%;
+  height: 360px;      /* Featured는 조금 더 크게 */
+  object-fit: cover;
+}
+
+/* ===== Profile card inside grid ===== */
+.profile-card-grid {
+  text-align: left;   /* 글은 기본 왼쪽정렬 */
+}
+
+.profile-card-grid .profile-inner {
+  padding: 1.6rem 1.4rem 1.4rem;
+}
+
+/* 사진: 가운데 정렬 + 1.3배 키움 */
+.profile-card-grid .profile-avatar {
+  display: block;
+  width: 416px;       /* 320px * 1.3 */
+  height: 416px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -0.4rem auto 1.2rem auto; 
+}
+
+.profile-card-grid .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 제목: 왼쪽 정렬 강제 */
+.profile-card-grid h2 {
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+/* 본문: justify 때문에 안먹던 문제 해결(왼쪽 정렬 강제) */
+.profile-card-grid p {
+	margin: 0 0 1rem 0;
+}
+
+/* 모바일에서 사진 너무 크면 자동으로 줄어듦 */
+@media screen and (max-width: 736px) {
+  .profile-card-grid .profile-avatar {
+    width: 70vw;
+    height: 70vw;
+  }
+}
+
+
+/* ===== Vertically center Customer Segmentation card ===== */
+.cs-vertical-center {
+  display: flex;
+  align-items: center;   /* 🔥 세로 가운데 */
+}
+
+.cs-vertical-center .cs-inner {
+  width: 100%;
+}
