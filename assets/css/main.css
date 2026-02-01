@@ -4759,8 +4759,10 @@ input, select, textarea {
 
 .profile-card-grid .profile-avatar {
   display: block;
-  width: min(360px, 72vw); 
-  height: min(360px, 72vw);
+  width: 100%;          /* 칸 너비를 절대 넘지 않게 */
+  max-width: 360px;     /* 데스크탑에서 최대 크기 */
+  aspect-ratio: 1 / 1;  /* 정사각 유지 → 원형 깔끔 */
+  height: auto;         /* aspect-ratio가 높이를 잡음 */
   border-radius: 50%;
   overflow: hidden;
   margin: -0.4rem auto 1.2rem auto;
