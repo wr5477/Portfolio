@@ -4759,8 +4759,8 @@ input, select, textarea {
 
 .profile-card-grid .profile-avatar {
   display: block;
-  width: 360px;  
-  height: 360px;
+  width: min(360px, 72vw); 
+  height: min(360px, 72vw);
   border-radius: 50%;
   overflow: hidden;
   margin: -0.4rem auto 1.2rem auto;
@@ -4783,13 +4783,6 @@ input, select, textarea {
 	margin: 0 0 1rem 0;
 }
 
-/* 모바일에서 사진 너무 크면 자동으로 줄어듦 */
-@media screen and (max-width: 736px) {
-  .profile-card-grid .profile-avatar {
-    width: 70vw;
-    height: 70vw;
-  }
-}
 
 
 /* ===== Vertically center Customer Segmentation card ===== */
@@ -4800,4 +4793,10 @@ input, select, textarea {
 
 .cs-vertical-center .cs-inner {
   width: 100%;
+}
+
+/* Project thumbnails: consistent size & responsive */
+.posts article .image.fit img {
+  height: 260px;
+  object-fit: cover;
 }
